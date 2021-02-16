@@ -1,0 +1,50 @@
+{
+  "name": "express-version-router",
+  "version": "0.1.0",
+  "description": "Lightweight api versioning tool for express",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register ./test/**.test.ts",
+    "build": "tsc --extendedDiagnostics",
+    "gen_docs": "npx typedoc --plugin typedoc-plugin-markdown --entryPoints ./src/VersionRouter.ts --entryDocument docs/README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roiperlman/express-version-router.git"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "api version",
+    "api versioning"
+  ],
+  "author": "Roi Perlman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roiperlman/express-version-router/issues"
+  },
+  "homepage": "https://github.com/roiperlman/express-version-router#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.15",
+    "@types/chai-as-promised": "^7.1.3",
+    "@types/express": "^4.17.11",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.28",
+    "@types/semver": "^7.3.4",
+    "@types/supertest": "^2.0.10",
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.20.0",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
+    "supertest": "^6.1.3",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "semver": "^7.3.4",
+    "typedoc": "^0.20.25",
+    "typedoc-plugin-markdown": "^3.5.0"
+  }
+}
