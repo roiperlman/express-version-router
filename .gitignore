@@ -1,5 +1,8 @@
 node_modules/
+.idea/*.*
+.idea/workspace.xml
 .idea/
+.idea
 **/node_modules
 docs
 dist
