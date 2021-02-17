@@ -183,6 +183,38 @@ describe('VersionRouter', async function () {
       .expect(404)
     expect(res.body).to.haveOwnProperty('errorMessage').that.includes('Route not found for version')
     server.close();
+  });
+  it('should use custom error handler', async function () {
+    const versionRouter = new VersionRouter([
+      new VersionedRoute({
+        version: '1.0.0',
+        default: false,
+        middleware: [
+          (req: Request, res: Response, next: NextFunction) => {
+            console.log('route 2 function 1')
+            next()
+          },
+          (req: Request, res: Response, next: NextFunction) => {
+            console.log('route 2 function 2')
+            res.send({route: '1'})
+          },
+        ]
+      })
+    ], {
+      errorHandler: (req, res, next) => {
+        res.send({message: 'custom message'});
+      }
+    })
+    const app = Express();
+    app.use(VersionRouter.ExtractVersionFromHeader('Accept-version'));
+    app.use('/', versionRouter.routeRequestByVersion());
+    app.use(handleError);
+    const server = await app.listen(10223);
 
+    let res = await supertest(app)
+      .get('/')
+      .expect(200)
+    expect(res.body).to.haveOwnProperty('message').that.includes('custom message')
+    server.close();
   });
 });
