@@ -6,3 +6,8 @@ node_modules/
 **/node_modules
 docs
 dist
+input
+markdown
+temp
+etc
+.nyc_output

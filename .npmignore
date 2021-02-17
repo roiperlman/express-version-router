@@ -3,3 +3,10 @@ test
 etc
 src
 docs
+markdown
+.nyc_output
+input
+markdown
+temp
+etc
+.nyc_output

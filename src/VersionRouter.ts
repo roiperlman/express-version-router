@@ -50,11 +50,21 @@ export class VersionRouter {
     = (req: RequestWithVersion , res: Response, next: NextFunction) => {
     next(new Error('Route not found for version ' + req.version));
   }
+
+  /**
+   * Instantiates a Version Router
+   * @param routes - versioned routes
+   * @param options - additional options
+   * @param options.errorHandler - Custom error handler for the version match stage
+   * @constructor
+   * @returns VersionRouter
+   */
   constructor(routes: Array<VersionedRoute>, options?: VersionRouterOptions) {
     this.routes = routes;
     if (options) {
       this.errorHandler =  options.errorHandler;
     }
+    return this
   }
 
   /**
@@ -62,7 +72,7 @@ export class VersionRouter {
    * Mount it once BEFORE all versioned routes
    * @param versionHeader - custom header
    */
-  static ExtractVersionFromHeaders(versionHeader: string)  {
+  static ExtractVersionFromHeader(versionHeader: string)  {
     return (req: Request, res: Response, next: NextFunction) => {
       // @ts-ignore
       req.version = req.header(versionHeader) as string;
@@ -106,6 +116,7 @@ export class VersionRouter {
 /**
  * Creates a versioned route object that contains middleware and version data
  * @public
+ * @returns an instance of VersionedRoute
  */
 export class VersionedRoute implements VersionedMiddleware {
   middleware: Array<RequestHandler | RequestHandlerWithPromise> = [];
@@ -118,6 +129,9 @@ export class VersionedRoute implements VersionedMiddleware {
     this.default = config.default;
   }
 
+  /**
+   * @returns the middleware array as a Router
+   */
   toRouter(): Express.Router {
     const r = Router();
     r.use(this.middleware);

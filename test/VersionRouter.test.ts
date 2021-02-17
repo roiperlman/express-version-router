@@ -15,7 +15,7 @@ describe('VersionRouter', async function () {
     }
   }
   it('should route request by version', async function () {
-    const versionRouter = new VersionRouter([
+    const routeVersions: Array<VersionedRoute> = [
       new VersionedRoute({
         version: '1.0.0',
         default: false,
@@ -58,10 +58,10 @@ describe('VersionRouter', async function () {
           },
         ]
       })
-    ])
+    ];
     const app = Express();
-    app.use(VersionRouter.ExtractVersionFromHeaders('Accept-version'));
-    app.use('/', versionRouter.routeRequestByVersion());
+    app.use(VersionRouter.ExtractVersionFromHeader('Accept-version'));
+    app.use('/', new VersionRouter(routeVersions).routeRequestByVersion());
     app.use(handleError);
     const server = await app.listen(9091);
 
@@ -137,7 +137,7 @@ describe('VersionRouter', async function () {
       })
     ])
     const app = Express();
-    app.use(VersionRouter.ExtractVersionFromHeaders('Accept-version'));
+    app.use(VersionRouter.ExtractVersionFromHeader('Accept-version'));
     app.use('/users', versionRouter.routeRequestByVersion());
     app.use(handleError);
     const server = await app.listen(9099);
@@ -173,7 +173,7 @@ describe('VersionRouter', async function () {
       })
     ])
     const app = Express();
-    app.use(VersionRouter.ExtractVersionFromHeaders('Accept-version'));
+    app.use(VersionRouter.ExtractVersionFromHeader('Accept-version'));
     app.use('/', versionRouter.routeRequestByVersion());
     app.use(handleError);
     const server = await app.listen(10222);
