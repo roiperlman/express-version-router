@@ -1,14 +1,14 @@
 ## Express Version Router
 #### Lightweight api versioning tool for express
 [![Build Status](https://travis-ci.org/roiperlman/express-version-router.svg?branch=master)](https://travis-ci.org/roiperlman/express-version-router)
-
+[![Coverage Status](https://coveralls.io/repos/github/roiperlman/express-version-router/badge.svg?branch=master)](https://coveralls.io/github/roiperlman/express-version-router?branch=master)
 ## Installation
 ***
 ```
 npm install --save express-version-router
 ```
 
-####import:
+ import:
 ```typescript
 import {VersionRouter, VersionedRoute} from 'express-version-router';
 ```
