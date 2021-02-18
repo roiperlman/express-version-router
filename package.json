@@ -1,5 +1,5 @@
 {
-  "name": "express-version-router",
+  "name": "version-router-express",
   "version": "0.2.3",
   "description": "Lightweight api versioning tool for express",
   "main": "index.js",

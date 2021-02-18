@@ -1,16 +1,16 @@
-## Express Version Router
+## Version Router Express
 #### Lightweight api versioning tool for express
 [![Build Status](https://travis-ci.org/roiperlman/express-version-router.svg?branch=master)](https://travis-ci.org/roiperlman/express-version-router)
 [![Coverage Status](https://coveralls.io/repos/github/roiperlman/express-version-router/badge.svg?branch=master)](https://coveralls.io/github/roiperlman/express-version-router?branch=master)
 ## Installation
 ***
 ```
-npm install --save express-version-router
+npm install --save version-router-express
 ```
 
  import:
 ```typescript
-import {VersionRouter, VersionedRoute} from 'express-version-router';
+import {VersionRouter, VersionedRoute} from 'version-router-express';
 ```
 
 This module generates [Express](https://www.npmjs.com/package/express) middleware that enables efficient management of api routes versions.
@@ -24,7 +24,7 @@ This property can be generated in any way along the route's path.
 VersionedRoute has a static utility method that can be mounted to extract the version from a header and assign it to req.version.
 
 ```typescript
-app.use(VersionedRoute.ExtractVersionFromHeader('App-version')
+app.use(VersionedRoute.ExtractVersionFromHeader('App-version'));
 ```
 
 Any custom header can be used, as well as any other strategy for assigning a value to request.version
