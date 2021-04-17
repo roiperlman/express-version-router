@@ -2,7 +2,7 @@
   "name": "version-router-express",
   "version": "0.2.6",
   "description": "Lightweight api versioning tool for express",
-  "main": "VersionRouter.js",
+  "main": "dist/VersionRouter.js",
   "scripts": {
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "test": "mocha -r ts-node/register ./test/**.test.ts",
