@@ -11,3 +11,4 @@ temp
 etc
 .nyc_output
 coverage
+.travis.yml
