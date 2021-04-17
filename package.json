@@ -1,6 +1,6 @@
 {
   "name": "version-router-express",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Lightweight api versioning tool for express",
   "main": "index.js",
   "scripts": {
