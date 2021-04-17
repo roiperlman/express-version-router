@@ -3,6 +3,7 @@
   "version": "0.2.7",
   "description": "Lightweight api versioning tool for express",
   "main": "dist/VersionRouter.js",
+  "types": "dist/VersionRouter.d.ts",
   "scripts": {
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "test": "mocha -r ts-node/register ./test/**.test.ts",
