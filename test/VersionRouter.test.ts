@@ -1,7 +1,8 @@
 import {expect} from 'chai';
-import Express, {ErrorRequestHandler, NextFunction, Request, Response} from "express";
-import supertest from "supertest";
+import {ErrorRequestHandler, NextFunction, Request, Response} from "express";
+import Express = require("express");
 import {VersionedRoute, VersionRouter} from "../src/VersionRouter";
+import supertest = require("supertest");
 
 
 describe('VersionRouter', async function () {

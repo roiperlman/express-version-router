@@ -1,5 +1,5 @@
 import {expect} from 'chai';
-import Express, {NextFunction, Request, Response} from "express";
+import {Express, NextFunction, Request, Response} from "express";
 import {VersionedRoute, VersionRouter} from "../src/VersionRouter";
 
 describe('class VersionedRoute', async function () {

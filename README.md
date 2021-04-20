@@ -2,6 +2,8 @@
 #### Lightweight api versioning tool for express
 [![Build Status](https://travis-ci.org/roiperlman/express-version-router.svg?branch=master)](https://travis-ci.org/roiperlman/express-version-router)
 [![Coverage Status](https://coveralls.io/repos/github/roiperlman/express-version-router/badge.svg?branch=master)](https://coveralls.io/github/roiperlman/express-version-router?branch=master)
+[![Install Sizze](https://badgen.net/packagephobia/publish/version-router-express)](hhttps://packagephobia.com/result?p=version-router-express)
+[![Install Sizze](https://badgen.net/bundlephobia/dependency-count/version-router-express)](https://packagephobia.com/result?p=version-router-express)
 
 [comment]: <> ([![Dependecies Status]&#40;https://david-dm.org/roip/verion-router-express.svg&#41;]&#40;https://david-dm.org/roip/verion-router-express.svg&#41;)
 ## Installation
@@ -26,7 +28,7 @@ This property can be generated in any way along the route's path.
 VersionedRoute has a static utility method that can be mounted to extract the version from a header and assign it to req.version.
 
 ```typescript
-app.use(VersionedRoute.ExtractVersionFromHeader('App-version'));
+app.use(VersionedRouter.ExtractVersionFromHeader('App-version'));
 ```
 
 Any custom header can be used, as well as any other strategy for assigning a value to request.version
@@ -89,7 +91,7 @@ If no matches were found, it will resolve to the route defined as default.
 ```typescript
 app.use('/testRoute', new VersionRouter(routeVersions).routeRequestByVersion)
 ```
-The router can be configured with a custom error handler for the version matching stage of the
+The router can be configured with a custom error handler for the version matching stage
 ```typescript
 app.use('/testRoute', new VersionRouter(
   routeVersions,
