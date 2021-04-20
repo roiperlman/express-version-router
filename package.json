@@ -8,7 +8,8 @@
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "test": "mocha -r ts-node/register ./test/**.test.ts",
     "build": "tsc --extendedDiagnostics",
-    "gen_docs": "npx typedoc --plugin typedoc-plugin-markdown --entryPoints ./src/VersionRouter.ts --entryDocument docs/README.md"
+    "gen_docs": "npx typedoc --plugin typedoc-plugin-markdown --entryPoints ./src/VersionRouter.ts --entryDocument docs/README.md",
+    "pub": "tsc && npm version patch --commit && npm publish"
   },
   "repository": {
     "type": "git",
