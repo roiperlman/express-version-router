@@ -2,8 +2,8 @@
 #### Lightweight api versioning tool for express
 [![Build Status](https://travis-ci.org/roiperlman/express-version-router.svg?branch=master)](https://travis-ci.org/roiperlman/express-version-router)
 [![Coverage Status](https://coveralls.io/repos/github/roiperlman/express-version-router/badge.svg?branch=master)](https://coveralls.io/github/roiperlman/express-version-router?branch=master)
-[![Install Sizze](https://badgen.net/packagephobia/publish/version-router-express)](hhttps://packagephobia.com/result?p=version-router-express)
-[![Install Sizze](https://badgen.net/bundlephobia/dependency-count/version-router-express)](https://packagephobia.com/result?p=version-router-express)
+[![Install Size](https://badgen.net/packagephobia/publish/version-router-express)](hhttps://packagephobia.com/result?p=version-router-express)
+[![Dependency Count](https://badgen.net/bundlephobia/dependency-count/version-router-express)](https://packagephobia.com/result?p=version-router-express)
 
 [comment]: <> ([![Dependecies Status]&#40;https://david-dm.org/roip/verion-router-express.svg&#41;]&#40;https://david-dm.org/roip/verion-router-express.svg&#41;)
 ## Installation
